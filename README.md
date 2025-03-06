@@ -16,6 +16,6 @@ OrquidIA es una aplicación full-stack que ofrece un servicio de predicción med
 
 ## Contacto
 
-* [Daniel Londoño Ocampo] - [daniellondonoocampo@gmail.com](daniellondonoocampo@gmail.com)
+* Daniel Londoño Ocampo - [daniellondonoocampo@gmail.com](daniellondonoocampo@gmail.com)
 * [LinkedIn](www.linkedin.com/in/daniel-londono-ocampo)
 * [Página web](https://dldatadevp.vercel.app/es)
