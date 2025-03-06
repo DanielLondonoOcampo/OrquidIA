@@ -1,6 +1,10 @@
 # OrquidIA
 
-OrquidIA es una aplicación full-stack que ofrece un servicio de predicción mediante algoritmos de ML para estratificar la evolución de la enfermedad en pacientes con mieloma múltiple
+OrquidIA es una aplicación full-stack que ofrece un servicio de predicción mediante algoritmos de ML para estratificar la evolución de la enfermedad en pacientes con mieloma múltiple.
+
+## **Disclaimer
+
+La fuente de datos proviene de la Universidad de Tlemcen, al ser el mieloma múltiple una enfermedad huerfana (infrecuente), debimos hacer uso de generación sintética de datos para un adecuado entrenamiento del modelo, por lo que la aplicación está sujeta a sesgos y su uso es meramente académico, no tiene validación para la práctica médica profesional.
 
 ## Características Principales
 
@@ -12,7 +16,7 @@ OrquidIA es una aplicación full-stack que ofrece un servicio de predicción med
 
 [Fotos](URL_DE_TU_CAPTURA_1)
 [Video](https://drive.google.com/file/d/153JDYJduGaecyvxUSDNOgfl8w6azBnSS/view?usp=sharing)
-[Dataset]()
+[Dataset](https://drive.google.com/file/d/1jrxBh31MEusQIiicVWSs5iEBCVDEtRZm/view?usp=sharing)
 
 ## Contacto
 
