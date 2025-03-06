@@ -1,0 +1,13 @@
+services:
+  backend:
+    build:
+      context: ./ # Path to the backend directory
+      dockerfile: DockerFile
+    ports:
+      - "8000:8000" # Map host port to container port
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true # Use an external network defined in another file

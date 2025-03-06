@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build:
+      context: ./orquidia
+      dockerfile: DockerFile
+    ports:
+      - "3000:3000"
+    # volumes:
+    #   - ~/.aws:/root/.aws:ro # Mount AWS credentials for access
+    environment:
+      - AWS_REGION=us-east-1 # Example of passing environment variables
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true

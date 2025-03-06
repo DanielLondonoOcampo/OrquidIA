@@ -1,0 +1,46 @@
+# Use an official OpenJDK 17 image as the base
+FROM openjdk:17-jdk-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Install necessary packages including git and curl
+RUN apt-get update && \
+    apt-get install -y wget unzip git curl && \
+    apt-get clean
+
+# Install Gradle 7.6
+RUN wget https://services.gradle.org/distributions/gradle-7.6-bin.zip && \
+    unzip gradle-7.6-bin.zip -d /opt/ && \
+    ln -s /opt/gradle-7.6/bin/gradle /usr/bin/gradle && \
+    rm gradle-7.6-bin.zip
+
+# Clone the Flutter SDK
+RUN git clone https://github.com/flutter/flutter.git /flutter
+
+# Create a non-root user
+RUN useradd -ms /bin/bash flutteruser
+
+# Change ownership of the Flutter directory to the non-root user
+RUN chown -R flutteruser:flutteruser /flutter
+
+# Set up Flutter environment
+ENV PATH="/flutter/bin:${PATH}"
+
+# Switch to the non-root user
+USER flutteruser
+
+# Run Flutter doctor to check for dependencies
+RUN flutter doctor
+
+# Copy your Flutter project files into the container with ownership change
+COPY --chown=flutteruser:flutteruser . .
+
+# Get dependencies for your Flutter project
+RUN flutter pub get
+
+# Expose the port for the Flutter app (if running a web app)
+EXPOSE 3000
+
+# Command to run the Flutter app (for web)
+CMD ["flutter", "run", "-d", "web-server", "--web-port=3000", "--web-hostname=0.0.0.0"]

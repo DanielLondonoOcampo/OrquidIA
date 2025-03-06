@@ -1,0 +1,13 @@
+services:
+  m_learning:
+    build:
+      context: ./ # Path to the ML model directory
+      dockerfile: DockerFile
+    ports:
+      - "5000:5000" # Map host port to container port
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true # Use an external network defined in another file
